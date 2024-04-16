@@ -35,3 +35,14 @@ parteDosEnteraa x |  x >= 0 && x < 1 = 0
                  | x >= 1 = 1 + parteDosEnteraa (x-1)
                  | otherwise = (-1) + parteDosEnteraa (x+1) 
 
+-- 8)
+iesimoDigito :: Integer -> Integer -> Integer
+iesimoDigito n | n == 0 = 1
+               | otherwise = n `div` 10 ^
+
+cantDigitos :: Int -> Int
+cantDigitos n | n < 10 = 1
+              | otherwise = 1 + cantDigitos (sacarUnidades n)
+              where sacarUnidades n = div n 10
+--seguir el ej 8 solo
+
