@@ -1,8 +1,9 @@
-aproxRaizDeDos :: Integer -> Float
-aproxRaizDeDos 1 = 2 -- a1 = 2
-aproxRaizDeDos n = 2 + 1 / (aproxRaizDeDos (n-1)) -- an_1 = 2 + 1/ an_1
+sucesion :: Integer -> Float
+sucesion 1 = 2 -- a1 = 2
+sucesion n = 2 + 1 / sucesion (n-1)
 
---aproxRaizDeDos (2) = 2 + 1 / a2-1 = 2 + 1 / 1 = 2 + 1/2 = 5/2
+aproximarRaizDeDos :: Integer -> Float
+aproximarRaizDeDos n = sucesion n - 1
 
 
 
