@@ -46,3 +46,56 @@ cantDigitos n | n < 10 = 1
               where sacarUnidades n = div n 10
 --seguir el ej 8 solo
 
+------- CLASE DEL 17/4 ------------
+-- EJERCICIO 13 --
+
+-- ESPECIFICACION --
+
+--Crear una funcion sumatoriaDoble { n : Z , m : Z
+--          requiere {n >=1 ^ m >= 1}
+--          asegura  { res <=> es la suma desde i = 1 hasta n, de la sumatoria desde j = 1 hasta m con el termino general igual a : i^j, con i y j enteros}
+--}
+
+-- RESOLUCIÒN --
+sumatoriaDoble :: Integer -> Integer -> Integer
+sumatoriaDoble n m | n == 1 = funcionG 1 m 
+                   | n > 1 = funcionG n m + sumatoriaDoble (n - 1) m
+-- divido la sumatoria desde i=1 hasta n de g(i,m), entionces despues en el segundo paso:
+-- la achico como la sumatoria desde i = 1 hasta n-1 de g(i,m) + g(n,m)
+
+funcionG :: Integer -> Integer -> Integer
+funcionG n 1 = n
+funcionG n m = n ^ m + funcionG n (m - 1)
+
+-- EJERCICIO 16 -- 
+menorDivisor :: Int -> Int
+menorDivisor x  | mod x 2 == 0 = 2
+                | x == 1 = 1
+                | otherwise = menorDivisorHasta x 2
+-- si mod x 2 es 0, entonces es par, entonces devuelvo cero
+
+menorDivisorHasta :: Int -> Int -> Int
+menorDivisorHasta x y   | mod x y == 0 = y
+                        | otherwise = menorDivisor x (y+1)
+
+-- la funcion termina cuando llega a y
+--pista: menor divisor de un numero hastacierto valor --
+-- el valor hasta el q busco el menor divisor es el que voy a usar para ir iterando para encontrando el menor divisor en esta funcion
+
+
+
+
+-- k es cuantop primos sumas ; y n es ekl numerio por el cual te preguntas
+
+
+-- pista : func 3 10 = t
+--               3 17 = f
+
+-- i es desde ; k es cuantos primos
+
+
+
+
+
+
+
